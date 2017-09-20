@@ -22,7 +22,7 @@ public class RoomEntity {
 
     @ManyToOne
     @JoinColumn(name = "RoomTypeId")
-    private RoomTypeEntity roomTypeEntity;
+    private RoomTypeEntity roomTypeId;
 
     @Column(name = "Description")
     private String description;
@@ -45,10 +45,10 @@ public class RoomEntity {
     public RoomEntity() {
     }
 
-    public RoomEntity(List<BookingDetailsEntity> bookingDetailsEntityList, String name, RoomTypeEntity roomTypeEntity, String description, float adultPrice, float childrenPrice, int sale, String status, String note) {
+    public RoomEntity(List<BookingDetailsEntity> bookingDetailsEntityList, String name, RoomTypeEntity roomTypeId, String description, float adultPrice, float childrenPrice, int sale, String status, String note) {
         this.bookingDetailsEntityList = bookingDetailsEntityList;
         this.name = name;
-        this.roomTypeEntity = roomTypeEntity;
+        this.roomTypeId = roomTypeId;
         this.description = description;
         this.adultPrice = adultPrice;
         this.childrenPrice = childrenPrice;
@@ -81,12 +81,12 @@ public class RoomEntity {
         this.name = name;
     }
 
-    public RoomTypeEntity getRoomTypeEntity() {
-        return roomTypeEntity;
+    public RoomTypeEntity getRoomTypeId() {
+        return roomTypeId;
     }
 
-    public void setRoomTypeEntity(RoomTypeEntity roomTypeEntity) {
-        this.roomTypeEntity = roomTypeEntity;
+    public void setRoomTypeId(RoomTypeEntity roomTypeId) {
+        this.roomTypeId = roomTypeId;
     }
 
     public String getDescription() {

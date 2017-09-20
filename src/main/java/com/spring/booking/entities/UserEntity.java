@@ -41,7 +41,7 @@ public class UserEntity {
     @Column(name = "Enable")
     private String enable;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "RoleId")
     private RoleEntity roleEntity;
 

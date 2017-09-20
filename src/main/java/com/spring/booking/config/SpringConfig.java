@@ -21,7 +21,7 @@ public class SpringConfig {
     DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/my-booking");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/my-booking?characterEncoding=utf-8");
         dataSource.setUsername("root");
         dataSource.setPassword("1");
         return  dataSource;
@@ -40,7 +40,7 @@ public class SpringConfig {
         // JPA properties
         Properties jpaProperties = new Properties();
         jpaProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
-        jpaProperties.setProperty("hibernate.hbm2ddl.auto", "create");
+        jpaProperties.setProperty("hibernate.hbm2ddl.auto", "update");
         entityManager.setJpaProperties(jpaProperties);
 
         return entityManager;
