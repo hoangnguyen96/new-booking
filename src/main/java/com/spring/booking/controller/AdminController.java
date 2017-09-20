@@ -11,4 +11,10 @@ public class AdminController {
 
     @RequestMapping(value = "/admin")
     public String admin(){return "../admin/admin";}
+
+    @RequestMapping(value = "/user")
+    public String user(){return "../admin/user";}
+
+    @RequestMapping(value = "/hotel")
+    public String hotel(){return "../admin/hotel";}
 }
