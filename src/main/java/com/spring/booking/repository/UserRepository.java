@@ -3,6 +3,8 @@ package com.spring.booking.repository;
 import com.spring.booking.entities.UserEntity;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+
 /**
  * Created by PC on 09/20/17.
  */

@@ -6,67 +6,130 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/home">Hotel Empire</a>
-    </div>
-    <!-- /.navbar-header -->
 
-    <ul class="nav navbar-top-links navbar-right">
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#"></a>
+    </div>
+
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+
+    <!-- Top Navigation: Left Menu -->
+    <ul class="nav navbar-nav navbar-left navbar-top-links">
+        <li><a href="/"><i class="fa fa-home fa-fw"></i> Trang Chủ</a></li>
+    </ul>
+
+    <!-- Top Navigation: Right Menu -->
+    <ul class="nav navbar-right navbar-top-links">
+        <li class="dropdown navbar-inverse">
+            <script>
+                $(document).ready(function() {
+                    $(".note").click(function () {
+                        $.ajax({
+                            url: "/admin?click=clicked", success: function () {
+                                $("#newOrder").fadeOut();
+                            }
+                        });
+                    });
+                });
+            </script>
+
+            <a class="note dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-bell fa-fw" ></i>
+                <%--<c:if test="${newOrder!=0}">--%>
+                    <%--<span class="note" id="newOrder" style="color: #fff;font-size: 12px;font-weight: bold;position: absolute;top: 6px;left: 26px;background-color: #cc3829;width: 16px;height: 18px;line-height: 18px;text-align: center;border-radius: 50px;">--%>
+                            <%--${newOrder}</span>--%>
+                <%--</c:if>--%>
             </a>
+            <script>
+                $(document).ready(function() {
+                    $("#newOrder").click(function () {
+                        alert("Clicked");
+                        $.ajax({
+                            url: "admin?click=clicked", success: function () {
+                                alert("ok");
+                                $("#newOrder").fadeOut();
+                            }
+                        });
+                    });
+                });
+            </script>
+
             <ul class="dropdown-menu dropdown-alerts">
                 <li>
-                    <a href="#">
+                    <a href="/admin" style="text-align: center;">
                         <div>
-                            <i class="fa fa-comment fa-fw"></i> New Comment
-                            <span class="pull-right text-muted small">4 minutes ago</span>
+                            <i class="fa fa-comment fa-fw"></i> Bạn có : <span style="color: #cc3829; font-size: 16px; font-weight: bold;">
+                            </span> hóa đơn mới
                         </div>
                     </a>
                 </li>
             </ul>
-            <!-- /.dropdown-alerts -->
         </li>
-        <!-- /.dropdown -->
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                <i class="fa fa-user fa-fw"></i> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i>Đăng xuất</a>
                 </li>
             </ul>
-            <!-- /.dropdown-user -->
         </li>
-        <!-- /.dropdown -->
     </ul>
-    <!-- /.navbar-top-links -->
 
+    <!-- Sidebar -->
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
+
             <ul class="nav" id="side-menu">
-                <li>
-                    <a href="/admin"><i class="fa fa-bar-chart-o fa-fw"></i> Thống kê</a>
-                    <!-- /.nav-second-level -->
+                <li class="sidebar-search">
+                    <div>
+                        <a style="font-size: 22px; margin-left: 25px;text-decoration: none;"><i class="fa fa-home"></i>BOOKING</a>
+                    </div>
+
                 </li>
                 <li>
-                    <a href="/user"><i class="fa fa-user fa-fw"></i> User</a>
+                    <a href="/admin" class="active"><i class="fa fa-bar-chart"></i> Thống kê</a>
                 </li>
                 <li>
-                    <a href="/hotel"><i class="fa fa-table fa-fw"></i> Hotel</a>
+                    <a href="/user"><i class="fa fa-address-card"></i> User</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-hotel"></i> Hotel<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                             <a href="/admin">Rooms</a>
+                        </li>
+                        <%--<c:choose>--%>
+                            <%--<c:when test="${user.roleAdEntity.id==1}">--%>
+                                <%--<li>--%>
+                                    <%--<a href="/admin/busprovider">Nhà xe</a>--%>
+                                <%--</li>--%>
+                            <%--</c:when>--%>
+                            <%--<c:otherwise>--%>
+                                <%--<li>--%>
+                                    <%--<a href="/admin/busprovider/edit">Sửa thông tin</a>--%>
+                                <%--</li>--%>
+                                <%--<li>--%>
+                                    <%--<a href="/admin/busroute">Tuyến xe</a>--%>
+                                <%--</li>--%>
+
+                                <%--<li>--%>
+                                    <%--<a href="/admin/bus">Xe</a>--%>
+                                <%--</li>--%>
+                            <%--</c:otherwise>--%>
+                        <%--</c:choose>--%>
+
+
+                    </ul>
                 </li>
             </ul>
+
         </div>
-        <!-- /.sidebar-collapse -->
     </div>
-    <!-- /.navbar-static-side -->
 </nav>
