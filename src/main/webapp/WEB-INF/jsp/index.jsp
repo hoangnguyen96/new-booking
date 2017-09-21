@@ -345,25 +345,6 @@
         </div>
         <!-- Recent Rooms End-->
 
-        <!-- Short Intro Start-->
-        <div class="short-intro">
-            <div class="container">
-                <div class="short-intro-inner">
-                    <!-- Image-->
-
-                    <span class="crown"><i class="flaticon-royalty-crown"></i></span>
-                    <h1><span>It's time to enjoy our</span> SPA!</h1>
-
-                    <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
-
-                    <div class="short-intro-item-image">
-                        <img src="/resources/img/spa.png" class="img-responsive" alt="group-pic">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Short Intro End-->
-
         <!-- New Experrience Start-->
         <div class="new-experience">
             <div class="container">

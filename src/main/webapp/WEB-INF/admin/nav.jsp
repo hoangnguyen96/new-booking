@@ -89,7 +89,7 @@
             <ul class="nav" id="side-menu">
                 <li class="sidebar-search">
                     <div>
-                        <a style="font-size: 22px; margin-left: 25px;text-decoration: none;"><i class="fa fa-home"></i>BOOKING</a>
+                        <a style="font-size: 22px; margin-left: 25px;text-decoration: none;"><i class="fa fa-building"></i>BOOKING</a>
                     </div>
 
                 </li>

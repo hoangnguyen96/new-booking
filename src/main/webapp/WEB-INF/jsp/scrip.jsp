@@ -6,15 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!-- Sub Footer-->
-<div class="sub-footer">
-    <div class="container">
-        <span>Copyright 2016. All rights reserved by: Hotel Empire</span>
-    </div>
-</div>
-<!-- Sub Footer-->
-
-
 <script src="/resources/js/jquery-2.2.0.min.js"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/bootstrap-slider.js"></script>
